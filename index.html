@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>jQuery Load of Script</title>
+        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            google.load("jquery", "1.3.2");
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="nasgor.js"></script>
+        <script type="text/javascript">
+
+            var listData = [
+                {
+                    navId: "myButton",
+                    route: "",
+                    containerId: "myDiv",
+                    urlHtml: "trackingCode.html"
+                },
+                {
+                    navId: "yourButton",
+                    route: "navtwo",
+                    containerId: "myDiv",
+                    urlHtml: "xxx.html"
+                },
+            ]
+            
+            initNasgor({
+                "listData": listData,
+                "isCantLeaveApp": true,
+            }, {
+                onReady: function(id, route) {
+                    console.log(`ready: id:${id} route:${route}`)
+                },
+                onChange: function(id, route) {
+                    console.log(`change: id:${id} route:${route}`)
+                },
+                onPush: function(id, route) {
+                    console.log(`push: id:${id} route:${route}`)
+                },
+                onPop: function(id, route) {
+                    console.log(`pop: id:${id} route:${route}`)
+                },
+                onLastPop: function(id, route) {
+                    console.log(`LAST POP: id:${id} route:${route}`)
+                }
+            })
+            
+         </script>
+    </head>
+    <body>
+        <button id="myButton">Click Me</button>
+        <button id="yourButton">Click You</button>
+        <div id="myDiv"></div>
+    </body>
+</html>
