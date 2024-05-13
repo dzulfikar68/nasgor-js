@@ -15,18 +15,17 @@
                 {
                     navId: "myButton",
                     route: "",
-                    containerId: "myDiv",
-                    urlHtml: "trackingCode.html"
+                    urlHtml: "layout1.html"
                 },
                 {
                     navId: "yourButton",
                     route: "navtwo",
-                    containerId: "myDiv",
-                    urlHtml: "xxx.html"
+                    urlHtml: "layout2.html"
                 },
             ]
             
             initNasgor({
+                "containerId": "myDiv",
                 "listData": listData,
                 "isCantLeaveApp": true,
             }, {
@@ -43,7 +42,7 @@
                     console.log(`pop: id:${id} route:${route}`)
                 },
                 onLastPop: function(id, route) {
-                    console.log(`LAST POP: id:${id} route:${route}`)
+                    console.log(`last-pop: id:${id} route:${route}`)
                 }
             })
             

@@ -13,12 +13,12 @@
 //     {
 //         navId: "nav-first",
 //         route: "home",
-//         containerId: "container-view",
 //         urlHtml: "pages/mainpage.html"
 //     },
 // ]
 
-// var data: "listData", "isCantLeaveApp"
+// for data
+// var data: "containerId", "listData", "isCantLeaveApp"
 // var callback: onReady, onChange, onPush, onPop, onLastPop
 
 function initNasgor(data, callback) {
@@ -62,7 +62,7 @@ function initNasgor(data, callback) {
                         }
                         var navId = getItemByRouteNasgor(e.route, data.listData).navId
                         isHasClicked = true
-                        $(`#${e.containerId}`).load(e.urlHtml)
+                        $(`#${data.containerId}`).load(e.urlHtml)
                         $(`#nasgor-${e.route}`)[0].click();
                         callback.onChange(navId, e.route)
                         callback.onPush(navId, e.route)
@@ -79,7 +79,7 @@ function initNasgor(data, callback) {
                 callback.onPop(firstData.navId, routeDefault)
                 callback.onLastPop(firstData.navId, routeDefault)
                 if (isCantLeaveApp) {
-                    $(`#${firstData.containerId}`).load(firstData.urlHtml)
+                    $(`#${data.containerId}`).load(firstData.urlHtml)
                     $(`#nasgor-${firstData.route}`)[0].click();
                 }
                 return
@@ -89,14 +89,14 @@ function initNasgor(data, callback) {
                 isHasClicked = false
                 return
             }
-            $(`#${item.containerId}`).load(item.urlHtml)
+            $(`#${data.containerId}`).load(item.urlHtml)
             $(`#nasgor-${item.route}`)[0].click();
             callback.onPop(item.navId, route)
         }
         var route = getRouteNasgor()
         var firstData = data.listData[0]
         callback.onReady(firstData.navId, route)
-        $(`#${firstData.containerId}`).load(firstData.urlHtml)
+        $(`#${data.containerId}`).load(firstData.urlHtml)
         $(`#nasgor-${firstData.route}`)[0].click();
     })
 }
