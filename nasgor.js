@@ -5,21 +5,31 @@
 
 // navId: id for key the <a> href button to swith page in container
 // route: is last pieces in url web, after symbol #, this mean route or link the page
-// containerId: this id for container can be switch page from any html
 // urlHtml: this address place html with extension (html) from root project (index.html)
 
+
+
+// for DATA
+// var data: "containerId", "listData", "isCantLeaveApp"
+// containerId: this id for container can be switch page from any html
+// listData: this id for container can be switch page from any html
 // EXAMPLE:
 // var listData = [
 //     {
-//         navId: "nav-first",
-//         route: "home",
-//         urlHtml: "pages/mainpage.html"
+//         navId: "nav-first", // is navigation id for element if clicked
+//         route: "home", // after navigation id clicked, do change route last url endpoint
+//         urlHtml: "pages/mainpage.html" // this meanlink file .html for load page, location from root
 //     },
 // ]
 
-// for data
-// var data: "containerId", "listData", "isCantLeaveApp"
+// for CALLBACK
+// callback for do action if some event clicked or loaded
 // var callback: onReady, onChange, onPush, onPop, onLastPop
+// onReady: this mean run if function first start/ page first loaded
+// onChange: this mean run if have any doing for changing route/ loaded html
+// onPush: this mean run if have any doing for forward clicked to change the page route has loaded html
+// onPop: this mean run if have any doing for backward clicked to change the page route has loaded html
+// onLastPop: this mean run if have any doing for backward clicked and this is the first page when site is opened.
 
 function initNasgor(data, callback) {
     function getRouteNasgor() {
