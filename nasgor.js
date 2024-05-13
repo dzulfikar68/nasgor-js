@@ -1,6 +1,11 @@
 // NASGOR.js is Navigation Single-Page Orientation
 // Make single page app with jquery with easy setup and small size library
 
+// yout should import script jquery before script nasgor.js
+// EXAMPLE:
+// <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+// <script src="nasgor.js"></script>
+
 // the data onclick navigation with tag <a> or some tag:
 
 // navId: id for key the <a> href button to swith page in container
